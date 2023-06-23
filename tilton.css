@@ -1,0 +1,126 @@
+:root {
+  --bg-white: rgb(243, 241, 238);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+.home-view {
+  margin: 0 auto;
+  width: 98%;
+  height: 98%;
+  background-image: url('./resoures/OG-IMAGE-EN.jpg');
+  background-repeat: no-repeat;
+  border-bottom-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar {
+  height: 11.76%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-button {
+  background: url('./resoures/search-button.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1em;
+}
+
+.home-image-holder {
+  height: 86.27%;
+}
+
+.navigation {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.navigation > ul {
+  width: 33.32%;
+  height: 100%;
+}
+
+.about-product {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2em;
+}
+
+.about-product img {
+  width: 50%;
+}
+
+.packaging {
+  height: 50%;
+  width: 31.66%;
+  display: flex;
+  gap: 0.2em;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2em;
+  background-color: var(--bg-white);
+  margin-left: 1em;
+  padding: 1.2em;
+  text-align: center;
+}
+
+.search-button {
+  height: 50%;
+  width: 10%;
+  border-radius: 50%;
+  background-color: var(--bg-white);
+}
+
+.about-us {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.about-us > li {
+  width: 16%;
+  height: 50%;
+  text-align: center;
+  padding: 3.5%;
+  color: white;
+}
+
+.tilton-home > a {
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 4em;
+  padding: 0.2em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.section-break {
+  width: 98%;
+  border: 1px solid white;
+}
