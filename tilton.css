@@ -30,10 +30,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('./resoures/OG-IMAGE-FR.jpeg');
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.1)),
+    url('./resoures/OG-IMAGE-FR.jpeg');
   background-size: 100% 105%;
-  border-bottom-right-radius: 45px;
-  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 2em;
+  border-bottom-left-radius: 2em;
   background-repeat: no-repeat;
 }
 
@@ -46,6 +47,7 @@
   border-bottom: 1px solid white;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .search-button {
@@ -136,8 +138,14 @@
   border: 1px solid white;
 }
 
-.packaging-heading {
+.heading {
   position: fixed;
+  width: 60%;
+  perspective: 1000px;
+}
+
+.packaging-heading {
+  position: relative;
   font-size: 140px;
   color: white;
   font-weight: 200;
@@ -145,59 +153,87 @@
 }
 
 #line1 {
-  top: 300px;
-  left: 430px;
+  top: 10%;
+  left: 8%;
+  width: fit-content;
 }
 
 #line2 {
-  top: 450px;
-  right: 280px;
+  top: 30%;
+  left: 55%;
+  width: fit-content;
 }
 
 #line3 {
-  top: 600px;
-  left: 430px;
+  top: 50%;
+  left: 8%;
+  width: fit-content;
 }
 
-.heading:hover > .packaging-heading {
+.heading:has(.packaging-heading:hover) .packaging-heading {
   color: black;
+  cursor: pointer;
 }
 
 .about-brands,
 .about-company {
-  position: absolute;
-  top: 8.2em;
+  position: fixed;
+  top: 8em;
   width: 98%;
   height: 0%;
   transition: 1s;
   transition-timing-function: ease-out;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  padding: 1em;
+  align-items: flex-start;
+  padding: 2em;
   gap: 1em;
 }
 
 .home-view:has(.brands:hover) .about-brands,
 .home-view:has(.company:hover) .about-company {
   height: 60%;
-  background-color: rgba(245, 245, 245, 0.8);
+  background-color: rgba(245, 245, 245, 0.9);
   border-radius: 1em 1em 2em 2em;
   z-index: 1;
 }
 
-.about-brands div,
-.about-careers div {
+.brands:hover,
+.company:hover {
+  cursor: pointer;
+}
+
+.about-brands div {
   width: 24.6%;
-  height: 89%;
+  height: 100%;
   gap: 1em;
-  background-color: rgba(248, 216, 186, 0.9);
+  border-radius: 2em;
+  background-color: whitesmoke;
 }
 
 .about-company div {
-  width: 32%;
-  height: 94%;
-  gap: 3em;
-  background-color: rgba(248, 216, 186, 0.9);
+  flex: 1 0 23%;
+  height: 100%;
+  gap: 1em;
+  background-color: rgb(120, 125, 121);
   border-radius: 2em;
+}
+
+.packaging-heading {
+  animation-name: rotate-text;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes rotate-text {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
 }
